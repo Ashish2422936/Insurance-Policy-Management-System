@@ -1,0 +1,25 @@
+# Ignore target directory
+/target/
+
+# Ignore Maven dependencies
+/.mvn/
+!.mvn/wrapper/maven-wrapper.jar
+
+# Ignore Eclipse specific files
+.classpath
+.project
+.settings/
+
+# Ignore IntelliJ IDEA specific files
+.idea/
+*.iml
+
+# Ignore logs and temporary files
+*.log
+
+# Ignore OS-specific files (e.g., macOS)
+.DS_Store
+
+# Ignore build output directories from src/main/java and src/test/java if any exist outside of /target/
+src/main/java/**/build/
+src/test/java/**/build/
