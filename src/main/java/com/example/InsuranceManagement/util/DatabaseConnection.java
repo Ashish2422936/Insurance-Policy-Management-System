@@ -19,7 +19,7 @@ public class DatabaseConnection {
 		}
 		
 	}
-	static Connection getConnection() {
+	public static Connection getConnection() {
 		return con;
 	}
 
