@@ -47,12 +47,23 @@ public class ClaimDaoImp implements ClaimDao {
 		try(Connection con=DatabaseConnection.getConnection();) {
 			PreparedStatement ps=con.prepareStatement(query);
 			ResultSet rs=ps.executeQuery();
+			
+			
 			while (rs.next()) {
-				
+				Claim c= new Claim();
+				c.setClaimId(rs.getInt("claimId"));
+				c.setClaimAmount(rs.getDouble("claimAmount"));
+				c.setPolicyId(rs.getInt("policyId"));
+				c.setClaimStatus(rs.getString("claimStatus"));
+				c.setSubmissionDate(rs.getDate("submissionDate"));
+				c.setSettlementDate(rs.getDate("settlementDate"));	
+				claims.add(c);
+				System.out.println(rs.getInt("claimId"));
 			}
 			
 		} catch (Exception e) {
 			// TODO: handle exception
+			e.printStackTrace();
 		}
 		
 		return claims;
